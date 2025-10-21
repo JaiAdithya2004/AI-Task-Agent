@@ -1,0 +1,40 @@
+# AI Agent Dependencies
+# Google Gemini API
+google-generativeai>=0.3.0
+
+# Core LangChain packages (optional - keeping for compatibility)
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langchain-community>=0.0.20
+
+# OpenAI API (optional - keeping for compatibility)
+openai>=1.0.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Web scraping (if needed)
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# File handling
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+
+# Utilities
+pydantic>=2.0.0
+typing-extensions>=4.5.0
+
+# Web UI
+streamlit>=1.28.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Optional: For advanced features
+# gradio>=4.0.0      # Alternative web interface

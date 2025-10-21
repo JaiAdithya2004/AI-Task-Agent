@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: autonomous-ai-agent
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    region: oregon
+    branch: main
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.0-flash
+      - key: GEMINI_TEMPERATURE
+        value: "0.7"
+      - key: GEMINI_MAX_TOKENS
+        value: "1000"
+      - key: LOG_LEVEL
+        value: INFO
+      - key: STREAMLIT_SERVER_PORT
+        value: "8501"
+      - key: STREAMLIT_SERVER_ADDRESS
+        value: "0.0.0.0"
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: "true"
+      - key: STREAMLIT_BROWSER_GATHER_USAGE_STATS
+        value: "false"
+    scaling:
+      minInstances: 1
+      maxInstances: 1
+    disk:
+      name: ai-agent-disk
+      mountPath: /app/logs
+      sizeGB: 1
